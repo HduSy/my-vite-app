@@ -1,6 +1,7 @@
 // import { debounce } from 'lodash-es'
 // import EventEmitter from "oh-my-mitt"
 // import { IEventHandler } from "oh-my-mitt/lib/types"
+export { base64toBlob } from './base64-blob.ts';
 
 export function fire(name: string, res: any) {
   // EventEmitter.emit(name, res)
