@@ -129,8 +129,9 @@ onMounted(()=>{
   //position: relative;
   //transform: translateY(1185px - 1314px);
   position: fixed;
-  left: 0;
-  top: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   opacity: 0;
   //transform: translateY(-160px);
   &.showOpacity {
