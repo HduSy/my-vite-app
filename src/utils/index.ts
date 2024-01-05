@@ -1,10 +1,15 @@
-import EventEmitter from "oh-my-mitt"
-import { IEventHandler } from "oh-my-mitt/lib/types"
+// import { debounce } from 'lodash-es'
+// import EventEmitter from "oh-my-mitt"
+// import { IEventHandler } from "oh-my-mitt/lib/types"
 
 export function fire(name: string, res: any) {
-  EventEmitter.emit(name, res)
+  // EventEmitter.emit(name, res)
 }
 
 export function receive(name: string, callback: IEventHandler) {
-  EventEmitter.on(name, callback)
+  // EventEmitter.on(name, callback)
 }
+
+// console.log(debounce);
+
+// console.log('import.meta.env', import.meta.env.TEAT_APIENV)

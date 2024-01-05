@@ -1,0 +1,20 @@
+:root {
+  --box-default-width: 100px;
+  --box-default-height: 100px;
+}
+
+.div-box {
+  width: 100px;
+  width: var(--box-default-width);
+  height: 100px;
+  height: var(--box-default-height);
+  background-color: #646cff;
+}
+
+.bg-box {
+  width: 100px;
+  width: var(--box-default-width);
+  height: 100px;
+  height: var(--box-default-height);
+  background: none center/contain no-repeat;
+}

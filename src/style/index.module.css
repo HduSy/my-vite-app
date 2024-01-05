@@ -1,0 +1,20 @@
+:root {
+  --box-default-width: 100px;
+  --box-default-height: 100px;
+}
+
+.div-box {
+  width: var(--box-default-width);
+  height: var(--box-default-height);
+  background-color: var(--default-color);
+}
+
+.bg-box {
+  width: var(--box-default-width);
+  height: var(--box-default-height);
+  background: none center/contain no-repeat;
+}
+
+.flex-box {
+  width: clamp(100px, 30%, 200px);
+}

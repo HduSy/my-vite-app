@@ -1,0 +1,17 @@
+:root {
+  --box-default-width: 100px;
+  --box-default-height: 100px;
+}
+
+.div-box {
+  width: var(--box-default-width);
+  height: var(--box-default-height);
+  background-color: #646cff;
+}
+
+.bg-box {
+  width: var(--box-default-width);
+  height: var(--box-default-height);
+  background: none center/contain no-repeat;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9pbmRleC5tb2R1bGUuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBIiwiZmlsZSI6InJlc3VsdC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyI6cm9vdCB7XG4gIC0tYm94LWRlZmF1bHQtd2lkdGg6IDEwMHB4O1xuICAtLWJveC1kZWZhdWx0LWhlaWdodDogMTAwcHg7XG59XG5cbi5kaXYtYm94IHtcbiAgd2lkdGg6IHZhcigtLWJveC1kZWZhdWx0LXdpZHRoKTtcbiAgaGVpZ2h0OiB2YXIoLS1ib3gtZGVmYXVsdC1oZWlnaHQpO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjNjQ2Y2ZmO1xufVxuXG4uYmctYm94IHtcbiAgd2lkdGg6IHZhcigtLWJveC1kZWZhdWx0LXdpZHRoKTtcbiAgaGVpZ2h0OiB2YXIoLS1ib3gtZGVmYXVsdC1oZWlnaHQpO1xuICBiYWNrZ3JvdW5kOiBub25lIGNlbnRlci9jb250YWluIG5vLXJlcGVhdDtcbn0iXX0= */
