@@ -7,16 +7,20 @@ const kvLocal = '/src/assets/video/KV.f.mp4'
 const poster = '/src/assets/p5.jpg'
 const poster2 = '/src/assets/16rt5g5qjb.png'
 
-const onVideoProgress = (e: Event) => {
-  const target = e.target as HTMLVideoElement
-  console.log('播放进度:', target.currentTime)
-  if (target.duration - target.currentTime < 0.05) {
-    console.log('timeupdate: 未正常播放')
-  }
-}
 const videoRef = ref<HTMLVideoElement>()
 const played = ref(false)
+let showVideoFrame = ref(false)
 
+const onVideoProgress = (e: Event) => {
+  const target = e.target as HTMLVideoElement
+  if(target.currentTime > 0.1) {
+    console.log('播放进度:', target.currentTime)
+    // showVideoFrame.value = true
+  }
+  if (target.duration - target.currentTime < 0.05) {
+    console.log('timeupdate: 播放结束')
+  }
+}
 // 监听play事件（浏览器间处理不太兼容
 const videoPlayEventDetect = () => {
   // Chrome无play事件触发，Safari上用户触摸video交互后触发play事件执行回调
@@ -25,6 +29,7 @@ const videoPlayEventDetect = () => {
       console.log('Event: play')
       if(!played.value) {
         played.value = true
+        showVideoFrame.value = true
         console.log('Event: 正常播放')
         videoEl.removeEventListener('play', handleFirstPlay)
       } else {
@@ -43,10 +48,12 @@ const videoPromiseDetect = () => {
   if(playPromise!==undefined) {
     playPromise.then(() => {
       console.log('Promise: 正常播放')
+      showVideoFrame.value = true
     }).catch((err) => {
       console.error('Promise: 未正常播放\n', err.message)
       videoEl.poster = poster2
       videoEl.muted = true
+      videoPlayEventDetect()
     })
   }
 }
@@ -58,6 +65,7 @@ const detectVideoAutoPlay = () => {
     // type 检测（始终推荐）
     if (navigator.getAutoplayPolicy("mediaelement") === "allowed") {
       console.log('The video element will autoplay with audio.')
+      showVideoFrame.value = true
     } else if (navigator.getAutoplayPolicy("mediaelement") === "allowed-muted") {
       console.log('Mute audio on video')
       videoEl.muted = true;
@@ -93,25 +101,42 @@ onMounted(()=>{
   <!-- muted -->
   <video
     width="375"
+    :class="['ParticleVideo', {showOpacity: showVideoFrame}]"
     ref="videoRef"
     :src="kvLink"
     @touchmove.stop.prevent
     autoplay
     loop
-    muted
     preload="auto"
     @timeupdate="onVideoProgress"
     :poster="poster2"
-    webkit-playsinline="true"
     playsinline="true"
-    x-webkit-airplay="disallow"
+    webkit-playsinline="true"
+    x-webkit-airplay="disallowed"
     x5-video-player-type="h5"
-    x5-video-player-fullscreen="true"
     x5-video-orientation="portraint"
+    x5-video-player-fullscreen="true"
 ></video>
 </template>
 
 <style lang="scss">
+.ParticleVideo {
+  object-fit: cover;
+  //width: 7.5rem;
+  //height: 13.14rem;
+  //width: 100vw;
+  //height: 100%;
+  //position: relative;
+  //transform: translateY(1185px - 1314px);
+  position: fixed;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  //transform: translateY(-160px);
+  &.showOpacity {
+    opacity: 1;
+  }
+}
 *::-webkit-media-controls-panel {
   display: none!important;
   opacity: 0;
