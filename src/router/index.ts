@@ -9,6 +9,8 @@ const SVGAAnime = ()=>import('../components/SVGAAnime.vue')
 const LottieAnime  = () => import('../components/LottieDemo.vue')
 const RequestAnimationFrameAnime = () => import('../components/RequestAnimationFrame.vue')
 
+const AppleLottery = () => import('../components/AppleLottery/index.vue')
+
 const routes = [
   {path: '/', component: HelloWorld},
   {path:'/video', component: Video},
@@ -18,6 +20,7 @@ const routes = [
   {path: '/svga-demo', component: SVGAAnime},
   {path: '/lottie-demo', component: LottieAnime},
   {path: '/requestAnimationFrameAnime-demo', component: RequestAnimationFrameAnime},
+  {path: '/lottery-demo', component: AppleLottery}
 ]
 
 const router = createRouter({
