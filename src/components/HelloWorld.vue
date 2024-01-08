@@ -2,10 +2,6 @@
 import { ref } from 'vue';
 import { fire } from '../utils';
 
-defineProps({
-  msg: String,
-})
-
 const count = ref(0)
 
 const addNum = () => {
@@ -22,7 +18,15 @@ const addNum = () => {
       <img src="/src/assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <h1>{{ msg }}</h1>
+  <h3>动画示例目录</h3>
+  <div class="dir">
+    <router-link to="/video">Video</router-link>
+    <router-link to="/pixi-spine-demo">Pixi Spine Animation</router-link>
+    <router-link to="/spine-player-demo">Spine Player</router-link>
+    <router-link to="/svga-demo">SVGA</router-link>
+    <router-link to="/lottie-demo">Lottie</router-link>
+    <router-link to="/requestAnimationFrameAnime-demo">requestAnimationFrame</router-link>
+  </div>
 
   <div class="card">
     <button type="button" @click="addNum">count is {{ count }}</button>
@@ -61,5 +65,9 @@ const addNum = () => {
 }
 .read-the-docs {
   color: #888;
+}
+.dir {
+  display: flex;
+  flex-direction: column;
 }
 </style>
