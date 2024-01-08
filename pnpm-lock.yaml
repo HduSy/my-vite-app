@@ -5,6 +5,7 @@ specifiers:
   '@vitejs/plugin-vue': ^4.2.3
   gsap: ^3.12.2
   lodash-es: ^4.17.21
+  lottie-web: ^5.12.2
   pixi-spine: ^4.0.4
   pixi.js: ^7.3.2
   postcss: ^8.4.30
@@ -20,6 +21,7 @@ dependencies:
   '@esotericsoftware/spine-player': registry.npmmirror.com/@esotericsoftware/spine-player/4.2.34
   gsap: registry.npmmirror.com/gsap/3.12.2
   lodash-es: 4.17.21
+  lottie-web: registry.npmmirror.com/lottie-web/5.12.2
   pixi-spine: registry.npmmirror.com/pixi-spine/4.0.4
   pixi.js: registry.npmmirror.com/pixi.js/7.3.2
   svgaplayerweb: registry.npmmirror.com/svgaplayerweb/2.3.2
@@ -2546,6 +2548,12 @@ packages:
     resolution: {integrity: sha512-VaFW53yt8QO61k2WJui0dHf4SlL8lxBofUuUmwBo0ljPk0Drz2TiuDW4jo3wDcv41qy/SxrJ+VAzJ/qYqsmzRw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/ismobilejs/-/ismobilejs-1.1.1.tgz}
     name: ismobilejs
     version: 1.1.1
+    dev: false
+
+  registry.npmmirror.com/lottie-web/5.12.2:
+    resolution: {integrity: sha512-uvhvYPC8kGPjXT3MyKMrL3JitEAmDMp30lVkuq/590Mw9ok6pWcFCwXJveo0t5uqYw1UREQHofD+jVpdjBv8wg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/lottie-web/-/lottie-web-5.12.2.tgz}
+    name: lottie-web
+    version: 5.12.2
     dev: false
 
   registry.npmmirror.com/normalize-path/3.0.0:
