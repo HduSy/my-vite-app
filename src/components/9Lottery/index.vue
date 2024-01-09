@@ -71,16 +71,16 @@ const lotteryEnd = (result: boolean) => {
       idx = targetIndex;
     }
     // 轮播速度变慢
-    type.value = 'slow'
+    type.value = 'slow' // 减速
     awardIndex.value = idx // 中奖奖品ID
     const second = (Number(rowCount.value) + Math.random() - 0.5) * 1000 // 动画时长大概控制在rowCount秒左右
     setTimeout(() => {
       // 轮播速度终止
-      type.value = 'stop'
+      type.value = 'stop' // 终止前减速
     }, second)
   }
 }
-// 利用requestAnimationFrame反复侦听type值
+// 利用requestAnimationFrame 屏幕刷新时反复侦听type值
 const handleChange = () => {
   const len = giftConfig.length;
   /**
@@ -94,24 +94,26 @@ const handleChange = () => {
   if (!lastTime.value || (Date.now() - lastTime.value >= speed.value)) {
 
     if (type.value === 'stop' && awardIndex.value === currentIndex.value) {
+      // 动画播放结束，恢复等待抽奖状态
       handleComplete(awardIndex.value)
       type.value = 'wait' // 初始等待抽奖状态
       return
+    } else {
+      // type.value !== 'stop'
+      const typeToAdd = {
+        infinity: 0,
+        slow: 20,
+        stop: 40
+      }
+      // 更新speed
+      speed.value += typeToAdd[type.value] || 0
+      lastTime.value = Date.now();
+      // 更新currentIndex当前激活框索引位置
+      const index = currentIndex.value === len - 1 ? 0 : currentIndex.value + 1;
+      currentIndex.value = index;
     }
-
-    // type.value !== 'stop'
-    const typeToAdd = {
-      infinity: 0,
-      slow: 20,
-      stop: 40
-    }
-    // 更新speed
-    speed.value += typeToAdd[type.value] || 0
-    lastTime.value = Date.now();
-    // 更新currentIndex当前激活框索引位置
-    const index = currentIndex.value === len - 1 ? 0 : currentIndex.value + 1;
-    currentIndex.value = index;
   }
+
   requestAnimationFrame(handleChange);
 }
 // 模拟抽奖接口
@@ -124,7 +126,7 @@ const doLottery: Promise<boolean> = new Promise((resolve) => {
 const handleStart = () => {
   if (type.value !== 'wait') return
   speed.value = initialSpeed;
-  type.value = 'infinity';
+  type.value = 'infinity'; // 匀速
   doLottery.then((res) => {
     // doLottery 成功参与抽奖 next(true)
     lotteryEnd(res);
