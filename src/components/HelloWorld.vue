@@ -7,6 +7,13 @@ const count = ref(0)
 const addNum = () => {
   fire('t', ++count.value)
 }
+document.addEventListener('visibilitychange', (event) => {
+  if (document.visibilityState === "visible") {
+    console.log('前台')
+  } else {
+    console.log('后台')
+  }
+})
 </script>
 
 <template>

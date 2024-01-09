@@ -9,7 +9,7 @@ const divBox = document.createElement('div')
 divBox.className = indexModuleCss.divBox
 
 onMounted(() => {
-  document.body.appendChild(divBox)
+  document.getElementById('app')?.appendChild(divBox)
 })
 onUnmounted(() => {
   divBox.remove()

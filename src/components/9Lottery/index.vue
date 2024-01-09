@@ -80,16 +80,25 @@ const lotteryEnd = (result: boolean) => {
     }, second)
   }
 }
-// 利用requestAnimationFrame侦听type值
+// 利用requestAnimationFrame反复侦听type值
 const handleChange = () => {
   const len = giftConfig.length;
-  // 后续 Date.now() - lastTime.value >= speed.value 时才更新轮播索引，间接控制了速度
+  /**
+   * 过 speed.value ms后才更新轮播索引，间接控制了速度
+   * 每轮更新 speed、lastTime
+   * type = infinity: speed = 100, 每0.1s更新一次索引 开始轮播
+   * type = slow: speed = 120, 每0.12s更新一次索引 减速
+   * type = stop: speed = 140, 每0.14s更新一次索引 再减速
+   * type = wait: speed = 100, 又初始化了速度
+   */
   if (!lastTime.value || (Date.now() - lastTime.value >= speed.value)) {
+
     if (type.value === 'stop' && awardIndex.value === currentIndex.value) {
       handleComplete(awardIndex.value)
       type.value = 'wait' // 初始等待抽奖状态
       return
     }
+
     // type.value !== 'stop'
     const typeToAdd = {
       infinity: 0,
