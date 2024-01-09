@@ -1,6 +1,6 @@
 @mixin media-dark-light-color {
   @media (prefers-color-scheme: light) {
-    color: #FFF;
+    color: #000;
   }
   @media (prefers-color-scheme: dark) {
     color: #000;

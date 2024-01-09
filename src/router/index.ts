@@ -7,9 +7,9 @@ const PixiSpineAnime = () => import('../components/PixiSpineAnime.vue')
 const SpinePlayerAnime = () => import('../components/SpinePlayerAnime.vue')
 const SVGAAnime = ()=>import('../components/SVGAAnime.vue')
 const LottieAnime  = () => import('../components/LottieDemo.vue')
-const RequestAnimationFrameAnime = () => import('../components/RequestAnimationFrame.vue')
+const MatchLottery = () => import('../components/MatchLottery.vue')
 
-const BiliLottery = () => import('../components/BiliLottery/index.vue')
+const BiliLottery = () => import('../components/9Lottery//index.vue')
 
 const routes = [
   {path: '/', component: HelloWorld},
@@ -19,8 +19,8 @@ const routes = [
   {path: '/spine-player-demo', component: SpinePlayerAnime},
   {path: '/svga-demo', component: SVGAAnime},
   {path: '/lottie-demo', component: LottieAnime},
-  {path: '/requestAnimationFrameAnime-demo', component: RequestAnimationFrameAnime},
-  {path: '/lottery-demo', component: BiliLottery}
+  {path: '/match-lottery', component: MatchLottery},
+  {path: '/9-lottery', component: BiliLottery}
 ]
 
 const router = createRouter({

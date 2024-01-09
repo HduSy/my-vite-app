@@ -25,7 +25,8 @@ const addNum = () => {
     <router-link to="/spine-player-demo">Spine Player</router-link>
     <router-link to="/svga-demo">SVGA</router-link>
     <router-link to="/lottie-demo">Lottie</router-link>
-    <router-link to="/requestAnimationFrameAnime-demo">requestAnimationFrame</router-link>
+    <router-link to="/match-lottery">match-lottery</router-link>
+    <router-link to="/9-lottery">9-lottery</router-link>
   </div>
 
   <div class="card">
