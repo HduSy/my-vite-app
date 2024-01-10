@@ -14,8 +14,9 @@ let showVideoFrame = ref(false)
 const onVideoProgress = (e: Event) => {
   const target = e.target as HTMLVideoElement
   if(target.currentTime > 0.1) {
+    // 解决加载黑屏问题
     console.log('播放进度:', target.currentTime)
-    // showVideoFrame.value = true
+    showVideoFrame.value = true
   }
   if (target.duration - target.currentTime < 0.05) {
     console.log('timeupdate: 播放结束')
