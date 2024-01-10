@@ -27,7 +27,10 @@ document.addEventListener('visibilitychange', (event) => {
   </div>
   <h3>动画示例目录</h3>
   <div class="dir">
+    <!-- other -->
     <router-link to="/video">Video</router-link>
+    <router-link to="/virtual-list">虚拟列表</router-link>
+    <!-- animation -->
     <router-link to="/pixi-spine-demo">Pixi Spine Animation</router-link>
     <router-link to="/spine-player-demo">Spine Player</router-link>
     <router-link to="/svga-demo">SVGA</router-link>
