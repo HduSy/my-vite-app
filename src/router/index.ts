@@ -5,6 +5,7 @@ const HelloWorld = () => import('../components/HelloWorld.vue')
 // other
 const Video  = () => import('../components/VideoItem.vue')
 const CSSModule = () => import('../components/CSSModule.vue')
+const LazyLoadList = () => import('../components/LazyLoadList/index.vue')
 const VirtualScroll  = () => import('../components/VirtualScroll/index.vue')
 
 // animation
@@ -22,6 +23,7 @@ const routes = [
   // other
   {path:'/video', component: Video},
   {path: '/css-module', component: CSSModule},
+  {path: '/lazyload-list', component: LazyLoadList},
   {path: '/virtual-list', component: VirtualScroll},
   // animation
   {path: '/pixi-spine-demo', component: PixiSpineAnime},

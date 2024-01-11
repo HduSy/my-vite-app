@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { StyleValue, computed, defineProps, onMounted, onUnmounted, ref } from 'vue';
 
-import { throttle } from '@utils';
 
 const props = defineProps({
   width: Number,
@@ -9,16 +8,13 @@ const props = defineProps({
   itemHeight: Number,
 })
 
-const containerRef = ref<HTMLDivElement>()
-const currentScollTop = ref(0)
-const visiableData = ref<Array<number>>([])
-
-const {width = 200, height = 200, itemHeight = 25} = props
+const {width = 200, height = 200, itemHeight = 50} = props
 
 let listData = ref<Array<any>>([]);
 const vNode = ref<HTMLDivElement>()
 const ioInstance = ref<IntersectionObserver>()
 const loading = ref(false)
+const index = ref(0)
 
 /**
  * 监测列表底部虚节点曝光触底操作
@@ -61,30 +57,6 @@ const itemStyle = (index: number):StyleValue => ({
   backgroundColor: index % 2 === 0 ? `#b478ed`:`#b1ed78`
 })
 
-const styles = ref<Array<StyleValue>>()
-// 更新可视区items
-const updateVisiableItems = () => {
-  const visiableIndex = Math.floor(currentScollTop.value/ itemHeight) // 可视区开始索引
-  const startIndex = Math.max(0, visiableIndex - 5) // 上缓冲区
-  const visiableSize = Math.ceil(height/itemHeight) // 可视区item数
-  const endIndex = Math.min(listData.value.length, startIndex + visiableSize + 10) // 下缓冲区
-  visiableData.value = listData.value.slice(startIndex, endIndex + 1)
-  // 动态计算item style.top
-  const arr = [] as any
-  for(let i = startIndex; i <= endIndex; i++) {
-    arr.push({
-      height: `${itemHeight}px`,
-      top: `${itemHeight * i}px`,
-      backgroundColor: i % 2 === 0 ? `#b478ed`:`#b1ed78`
-    })
-  }
-  styles.value = arr
-}
-// scroll事件节流，频繁触发，回调函数每100s内只执行一次
-const containerScrollTop = throttle(() => {
-  currentScollTop.value = containerRef.value?.scrollTop || containerRef.value?.scrollTop || 0
-  updateVisiableItems()
-}, 100)
 // 模拟异步请求
 const loadItems = (): Promise<Array<any>> => {
   loading.value = true
@@ -92,7 +64,7 @@ const loadItems = (): Promise<Array<any>> => {
     setTimeout(() => {
       console.log('懒加载新数据')
       loading.value = false
-      resolve(new Array(10).fill(true))
+      resolve(Array.from({length:10}, () => index.value++))
     }, Math.random() * 1000)
   })
 }
@@ -107,11 +79,12 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <h3>固定高度虚拟列表</h3>
-  <div class="container" ref="containerRef" :style="containerStyle">
+  <h3>传统懒加载</h3>
+  <h4>解决不了列表数据逐渐庞大后长列表全渲染出来导致的性能下降</h4>
+  <div class="container" :style="containerStyle">
     <div class="list" :style="contentStyle">
       <div class="item" v-for="(item, index) in listData" :style="itemStyle(index)">
-        {{ index }}
+        {{ item }}
       </div>
       <div class="v-node" ref="vNode"></div>
       <Transition name="fade">
@@ -131,6 +104,7 @@ onUnmounted(() => {
   opacity: 0;
 }
 .container {
+  margin: 0 auto;
   border: 1px solid black;
   .list {
     display: flex;

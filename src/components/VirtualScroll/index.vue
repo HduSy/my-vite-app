@@ -6,6 +6,13 @@ export default defineComponent({
   components: { FixedHeightListComp },
   setup(props, context) {
     const listData = [...new Array(10000).keys()]
+    const loadItems = () => {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(new Array(10).fill(true))
+        }, Math.random() * 800)
+      })
+    }
     return {
       listData
     }
@@ -16,13 +23,10 @@ export default defineComponent({
 
 <template>
   <div>
-    <h3>固定高度虚拟列表</h3>
-    <FixedHeightListComp class="list" :width="200" :height="200" :item-height="50" :list-data="listData" />
+    <FixedHeightListComp :width="200" :height="200" :item-height="50"/>
   </div>
 </template>
 
 <style scoped lang="scss">
-.list {
-  border: 1px solid black;
-}
+
 </style>

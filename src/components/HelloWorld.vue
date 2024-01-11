@@ -29,6 +29,7 @@ document.addEventListener('visibilitychange', (event) => {
   <div class="dir">
     <!-- other -->
     <router-link to="/video">Video</router-link>
+    <router-link to="/lazyload-list">懒加载列表</router-link>
     <router-link to="/virtual-list">虚拟列表</router-link>
     <!-- animation -->
     <router-link to="/pixi-spine-demo">Pixi Spine Animation</router-link>
