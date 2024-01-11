@@ -13,7 +13,8 @@ const { width = 200, height = 200, itemHeight = 50} = props
 
 const currentScollTop = ref(0)
 const containerRef = ref<HTMLDivElement>()
-let listData = ref<Array<any>>(Array.from({length: 10000}, (item, i) => i)); // 长列表
+// let listData = ref<Array<any>>(Array.from({length: 10000}, (item, i) => i)); // 长列表
+let listData = ref<Array<number>>([])
 const visiableData = ref<Array<number>>([])
 const visiableStyles = ref<Array<StyleValue>>([])
 
@@ -31,12 +32,44 @@ const contentStyle = computed(() => {
     height: `${itemHeight * listData.value.length}px`,
   }
 })
+const index = ref(0)
+const loadItems = ():Promise<Array<number>> => {
+  return new Promise((rs, rj) => {
+    setTimeout(() => {
+      const newData = [...listData.value, ...Array.from({length:10}, () => index.value++)]
+      listData.value = newData
+      rs(newData)
+    }, Math.random() * 800)
+  })
+}
 // 更新可视区items
 const updateVisiableItems = () => {
   const visiableIndex = Math.floor(currentScollTop.value/ itemHeight)
   const startIndex = Math.max(0, visiableIndex - 5)
   const visiableSize = Math.ceil(height/itemHeight)
-  const endIndex = Math.min(listData.value.length, startIndex + visiableSize + 7)
+  let endIndex = Math.min(listData.value.length, startIndex + visiableSize + 7)
+  if(endIndex > listData.value.length-1-5) {
+    return loadItems().then(res => {
+      let lastIndex = endIndex || visiableSize + endIndex + 1
+      visiableData.value = res.slice(startIndex, lastIndex)
+      console.log(`visiableData `, res.slice(startIndex, lastIndex))
+      console.log(`上缓冲区 ${startIndex}`)
+      console.log(`下缓冲区 ${endIndex}`)
+      console.log(`可视区开始索引 ${visiableIndex}`)
+      console.log(`可视区item数 ${visiableSize}`)
+      // 动态计算item style.top
+      let arr = [] as any
+      for(let i = startIndex; i <= lastIndex; i++) {
+        arr.push({
+          position: 'absolute',
+          height: `${itemHeight}px`,
+          transform: `translateY(${itemHeight * i}px)`, // 性能上 css transformY > js transformY > js top
+          backgroundColor: i % 2 === 0 ? `#b478ed`:`#b1ed78`
+        })
+      }
+      visiableStyles.value = arr
+    })
+  }
   visiableData.value = listData.value.slice(startIndex, endIndex + 1)
   console.log(`可视区开始索引 ${visiableIndex}`)
   console.log(`上缓冲区 ${startIndex}`)
@@ -49,7 +82,7 @@ const updateVisiableItems = () => {
     arr.push({
       position: 'absolute',
       height: `${itemHeight}px`,
-      top: `${itemHeight * i}px`,
+      transform: `translateY(${itemHeight * i}px)`, // 性能上 css transformY > js transformY > js top
       backgroundColor: i % 2 === 0 ? `#b478ed`:`#b1ed78`
     })
   }
@@ -63,6 +96,7 @@ const containerScrollTop = throttle(() => {
 }, 100)
 
 onMounted(async () => {
+  // await loadItems()
   updateVisiableItems()
   containerRef.value?.addEventListener('scroll', containerScrollTop, false)
 })
@@ -83,14 +117,6 @@ onUnmounted(() => {
 </template>
 
 <style scoped lang="scss">
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s ease;
-}
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
 .container {
   border: 1px solid black;
   .list {
@@ -104,9 +130,6 @@ onUnmounted(() => {
     }
     .v-node {
       height: 1px;
-    }
-    .loading {
-
     }
   }
 }

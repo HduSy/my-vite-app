@@ -27,6 +27,7 @@ const observeEl = () => {
         const newItems = await loadItems()
         listData.value = [...listData.value, ...newItems]
         console.log(listData.value)
+        // 取消观察，后续将不再触发 IntersectionObserver 的回调
         // observer.unobserve(entry.target)
       }
     })
