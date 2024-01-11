@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html style="font-size: 18.75px;">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="keywords" content="首页" />
+        <meta name="description" content="首页" />
+        <meta name="author" content="" />
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0" />
+        <meta content="yes" name="apple-mobile-web-app-capable" />
+        <meta name="format-detection" content="telphone=no" />
+        <title>test</title>
+        <style>
+            .iscroll-wraper {
+                width: 100%;
+                overflow: hidden;
+            }
+
+            .wrapper-p {
+                display: inline-block;
+                white-space: nowrap;
+                padding: .2667rem;
+                transition: 0.8s all ease;
+                transition-duration: .3s;
+            }
+
+            .product {
+                display: inline-block;
+                overflow: hidden;
+                width: 7.0667rem;
+                background-color: #fff;
+                border-radius: .2667rem;
+                box-shadow: 0 0 .2667rem 0 rgba(204, 197, 167, .4);
+                margin-right: .5333rem;
+                vertical-align: middle
+            }
+
+            .product-img {
+                padding-top: .32rem
+            }
+
+            .product-img img {
+                display: block;
+                width: 3.9467rem;
+                height: 3.9467rem;
+                margin: 0 auto
+            }
+
+            .view-more {
+                display: inline-block;
+                padding-right: .5333rem
+            }
+
+
+        </style>
+    </head>
+
+    <body>
+        <div class="iscroll-wraper" id="slider" style="touch-action: pan-y">
+            <div class="wrapper-p" id="slider-list">
+                <div class="product">
+                    <div class="product-img"> <img
+                            src="https://m.360buyimg.com/babel/jfs/t1/157040/20/4318/178633/60091652Edfd9192b/03e11147c956dda5.jpg!q70.webp" />
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product-img"> <img
+                            src="https://m.360buyimg.com/babel/jfs/t1/157040/20/4318/178633/60091652Edfd9192b/03e11147c956dda5.jpg!q70.webp" />
+                    </div>
+                
+                </div>
+                <div class="product">
+                    <div class="product-img"> <img
+                            src="https://m.360buyimg.com/babel/jfs/t1/86053/18/17384/110270/5e869ee8Ec16f918b/123d422c085d9efe.jpg!q70.webp" />
+                    </div>
+                  
+                </div>
+                <div class="product">
+                    <div class="product-img"> <img
+                            src="https://m.360buyimg.com/babel/jfs/t1/151879/24/15853/262943/6008dc95E7cd0051a/19d47954f23b789f.jpg!q70.webp" />
+                    </div>
+                   
+                </div>
+                <div class="product">
+                    <div class="product-img"> <img
+                            src="https://m.360buyimg.com/babel/jfs/t1/165638/40/3730/217030/600a7199E7a8e7128/0fcf976410a0c981.jpg!q70.webp" />
+                    </div>
+                   
+                </div>
+                <div class="view-more">查看更多</div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            document.getElementById("slider").addEventListener("touchstart", touchstart, false);
+            document.getElementById("slider").addEventListener("touchmove", touchmove, false);
+            document.getElementById("slider").addEventListener("touchend", touchend, false);
+            var width = document.documentElement.clientWidth;
+            var startX = 0; 
+            var translateX = 0; //横向滑动的距离
+            var startTime;
+            var startTranslate;  //每次滑动的起始值
+            var newTranslateX;
+            var isSlide = false;
+            let isOk = false;
+            let endduration = '';
+            let startduration = '';      
+            let maxWidth = document.getElementById('slider-list').offsetWidth - width + 20; //最大滑动长度
+            console.log(width);//375
+            console.log( document.getElementById('slider-list').offsetWidth ); //839
+            var arr = document.getElementsByClassName("view-more");
+            function touchstart (e) {
+                startX = e.touches[0].clientX; //开始滑动坐标
+                startTime = new Date().getTime();//滑动时间
+                startTranslate = translateX;//横向滑动的距离    
+                isSlide = true; //开始滑动
+            }
+            function touchmove (e) {
+                if (!isSlide) return; 
+                var currentX = e.touches[0].clientX;       //当前滑动x坐标    
+                if (startTranslate == 0 && currentX > startX) return;               
+                distance = currentX - startX;//滑动距离
+                translateX = currentX - startX + startTranslate;  //横向滑动的终点坐标值    
+                startduration= +new Date() - startTime               
+                if (128 < Math.abs(translateX) - maxWidth && startduration > 200) {
+                    isOk = true;
+                } else {
+                    isOk = false;
+                }      
+                document.getElementById("slider-list").style.transform = "translate(" + translateX + "px,0px) translateZ(0px)";
+            }
+            function touchend () {
+                if (!isSlide) return;
+                if(translateX>0){ 
+                	translateX=0;
+                }else if (Math.abs(translateX) > maxWidth) { 
+                    translateX = -maxWidth; 
+                }
+     			if (100 >= Math.abs(translateX) - maxWidth) { 
+                    console.log('滑动2');
+                    if (isOk) {
+                        setTimeout(() => {
+                            window.location.href = "https://www.baidu.com/";
+                        }, 33);
+                    }
+                }
+                document.getElementById("slider-list").style.transform ="translate(" + translateX + "px,0px) translateZ(0px)";
+            }    
+        </script>
+    </body>
+
+</html>

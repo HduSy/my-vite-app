@@ -7,6 +7,7 @@ const Video  = () => import('../components/VideoItem.vue')
 const CSSModule = () => import('../components/CSSModule.vue')
 const LazyLoadList = () => import('../components/LazyLoadList/index.vue')
 const VirtualScroll  = () => import('../components/VirtualScroll/index.vue')
+const PCHorizonalScroll  = () => import('../components/PCHorizonalScroll/index.vue')
 
 // animation
 const PixiSpineAnime = () => import('../components/PixiSpineAnime.vue')
@@ -25,6 +26,7 @@ const routes = [
   {path: '/css-module', component: CSSModule},
   {path: '/lazyload-list', component: LazyLoadList},
   {path: '/virtual-list', component: VirtualScroll},
+  {path: '/pc-h-scroll', component: PCHorizonalScroll},
   // animation
   {path: '/pixi-spine-demo', component: PixiSpineAnime},
   {path: '/spine-player-demo', component: SpinePlayerAnime},
