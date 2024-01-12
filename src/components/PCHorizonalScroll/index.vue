@@ -83,6 +83,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
+  <div>基于鼠标事件拖拽PC横向滚动简陋实现</div>
   <div class="container" ref="containerRef" :style="containerStyle">
     <div class="list" ref="listRef" :style="listStyle">
       <div class="list-item" v-for="(item, index) in list">{{ index }}</div>

@@ -8,6 +8,7 @@ const CSSModule = () => import('../components/CSSModule.vue')
 const LazyLoadList = () => import('../components/LazyLoadList/index.vue')
 const VirtualScroll  = () => import('../components/VirtualScroll/index.vue')
 const PCHorizonalScroll  = () => import('../components/PCHorizonalScroll/index.vue')
+const H5DownUpRefresh = () => import('../components/H5DownUpRefresh/index.vue')
 
 // animation
 const PixiSpineAnime = () => import('../components/PixiSpineAnime.vue')
@@ -27,6 +28,7 @@ const routes = [
   {path: '/lazyload-list', component: LazyLoadList},
   {path: '/virtual-list', component: VirtualScroll},
   {path: '/pc-h-scroll', component: PCHorizonalScroll},
+  {path: '/h5-refresh', component: H5DownUpRefresh},
   // animation
   {path: '/pixi-spine-demo', component: PixiSpineAnime},
   {path: '/spine-player-demo', component: SpinePlayerAnime},
