@@ -31,8 +31,8 @@ document.addEventListener('visibilitychange', (event) => {
     <router-link to="/video">Video</router-link>
     <router-link to="/lazyload-list">懒加载列表</router-link>
     <router-link to="/virtual-list">虚拟列表</router-link>
-    <router-link to="/pc-h-scroll">PC手动实现拖拽横向滚动</router-link>
-    <router-link to="/h5-refresh">h5下刷新</router-link>
+    <router-link to="/pc-h-scroll">基于MouseEvent拖拽PC横向滚动简单实现</router-link>
+    <router-link to="/h5-refresh">基于TouchEvent实现H5下拉刷新简单实现</router-link>
     <!-- animation -->
     <router-link to="/pixi-spine-demo">Pixi Spine Animation</router-link>
     <router-link to="/spine-player-demo">Spine Player</router-link>

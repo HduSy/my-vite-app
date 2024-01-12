@@ -25,12 +25,12 @@ const handleTouchMove = (e) => {
   distance.value = curY - startY.value
   const containerDiv = containerRef.value
   const listDiv = listRef.value
-  if(containerDiv && containerDiv.scrollTop < 1) {
+  if(containerDiv && containerDiv.scrollTop < 1) { // 判断到顶才触发下拉刷新
     if(distance.value > 30) {
       txt.value = '释放刷新'
+      loading.value = true
     }
     if(distance.value < 60) {
-      if(distance.value > 30) loading.value = true
       listDiv && (listDiv.style.transition = 'transform 0s')
       listDiv && (listDiv.style.transform = `translateY(${distance.value}px)`)
     }
