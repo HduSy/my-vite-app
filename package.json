@@ -1,6 +1,6 @@
 {
   "name": "oh-my-mitt",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "lib/index.esm.js",
   "type": "module",
@@ -11,7 +11,11 @@
     "dev": "rollup -c -w",
     "clean": "rm -rf lib"
   },
-  "keywords": ["EventBus", "Event", "emitter"],
+  "keywords": [
+    "EventBus",
+    "Event",
+    "emitter"
+  ],
   "author": "HduSy",
   "license": "MIT",
   "devDependencies": {
