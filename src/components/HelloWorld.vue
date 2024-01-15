@@ -1,11 +1,11 @@
 <script setup>
-import { ref } from 'vue';
-import { fire } from '../utils';
+import { onMounted, ref } from 'vue';
+import { fire, receive } from '../utils';
 
 const count = ref(0)
 
 const addNum = () => {
-  fire('t', ++count.value)
+  fire('t')
 }
 document.addEventListener('visibilitychange', (event) => {
   if (document.visibilityState === "visible") {
@@ -13,6 +13,11 @@ document.addEventListener('visibilitychange', (event) => {
   } else {
     console.log('后台')
   }
+})
+onMounted(() => {
+  receive('t', () => {
+    count.value++
+  })
 })
 </script>
 
