@@ -22,11 +22,11 @@ interface IEventMap {
 ## 使用
 ### 安装
 ```cmd
-pnpm/yarn/npm install OhMyEmitter --dev
+pnpm/yarn/npm install oh-my-mitt
 ```
 ### 引入
 ```ts
-import mitter from 'OhMyEmitter'
+import mitter from 'oh-my-mitt'
 ```
 ### 方法
 #### on(type: string, cb: IEventHandler)
