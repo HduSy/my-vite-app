@@ -1,0 +1,4 @@
+.history
+.rollup.cache
+lib
+node_modules
