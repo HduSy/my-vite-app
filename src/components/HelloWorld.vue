@@ -16,7 +16,7 @@ document.addEventListener('visibilitychange', (event) => {
 })
 onMounted(() => {
   receive('t', () => {
-    count.value++
+    console.log(count.value++)
   })
 })
 </script>

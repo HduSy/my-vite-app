@@ -6,6 +6,7 @@ specifiers:
   gsap: ^3.12.2
   lodash-es: ^4.17.21
   lottie-web: ^5.12.2
+  oh-my-mitt: ^1.0.1
   pixi-spine: ^4.0.4
   pixi.js: ^7.3.2
   postcss: ^8.4.30
@@ -22,6 +23,7 @@ dependencies:
   gsap: registry.npmmirror.com/gsap/3.12.2
   lodash-es: 4.17.21
   lottie-web: registry.npmmirror.com/lottie-web/5.12.2
+  oh-my-mitt: registry.npmmirror.com/oh-my-mitt/1.0.1
   pixi-spine: registry.npmmirror.com/pixi-spine/4.0.4
   pixi.js: registry.npmmirror.com/pixi.js/7.3.2
   svgaplayerweb: registry.npmmirror.com/svgaplayerweb/2.3.2
@@ -1486,6 +1488,16 @@ packages:
       yargs-parser: 21.1.1
     dev: true
 
+  registry.npmmirror.com/@babel/runtime-corejs3/7.23.8:
+    resolution: {integrity: sha512-2ZzmcDugdm0/YQKFVYsXiwUN7USPX8PM7cytpb4PFl87fM+qYPSvTZX//8tyeJB1j0YDmafBJEbl5f8NfLyuKw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@babel/runtime-corejs3/-/runtime-corejs3-7.23.8.tgz}
+    name: '@babel/runtime-corejs3'
+    version: 7.23.8
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      core-js-pure: registry.npmmirror.com/core-js-pure/3.35.0
+      regenerator-runtime: registry.npmmirror.com/regenerator-runtime/0.14.1
+    dev: false
+
   registry.npmmirror.com/@esbuild/android-arm/0.18.20:
     resolution: {integrity: sha512-fyi7TDI/ijKKNZTUJAQqiG5T7YjJXgnzkURqmGj13C6dCqckZBLdl4h7bkhHt/t0WP+zO9/zwroDvANaOqO5Sw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@esbuild/android-arm/-/android-arm-0.18.20.tgz}
     name: '@esbuild/android-arm'
@@ -2385,6 +2397,13 @@ packages:
       fsevents: registry.npmmirror.com/fsevents/2.3.3
     dev: true
 
+  registry.npmmirror.com/core-js-pure/3.35.0:
+    resolution: {integrity: sha512-f+eRYmkou59uh7BPcyJ8MC76DiGhspj1KMxVIcF24tzP8NA9HVa1uC7BTW2tgx7E1QVCzDzsgp7kArrzhlz8Ew==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/core-js-pure/-/core-js-pure-3.35.0.tgz}
+    name: core-js-pure
+    version: 3.35.0
+    requiresBuild: true
+    dev: false
+
   registry.npmmirror.com/define-data-property/1.1.1:
     resolution: {integrity: sha512-E7uGkTzkk1d0ByLeSc6ZsFS79Axg+m1P/VsgYsxHgiuc3tFSj+MjMIwe90FC4lOAZzNBdY7kkO2P2wKdsQ1vgQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/define-data-property/-/define-data-property-1.1.1.tgz}
     name: define-data-property
@@ -2569,6 +2588,14 @@ packages:
     version: 1.13.1
     dev: false
 
+  registry.npmmirror.com/oh-my-mitt/1.0.1:
+    resolution: {integrity: sha512-SQBeskFFNFNx1AKHEjjly9btAK/ZvINWcjTJHRDU9RfNAGk8uHhQP3d0B897z2TurggFxp1L5Sh+PS11VfeCPg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/oh-my-mitt/-/oh-my-mitt-1.0.1.tgz}
+    name: oh-my-mitt
+    version: 1.0.1
+    dependencies:
+      '@babel/runtime-corejs3': registry.npmmirror.com/@babel/runtime-corejs3/7.23.8
+    dev: false
+
   registry.npmmirror.com/picomatch/2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/picomatch/-/picomatch-2.3.1.tgz}
     name: picomatch
@@ -2660,6 +2687,12 @@ packages:
     dependencies:
       picomatch: registry.npmmirror.com/picomatch/2.3.1
     dev: true
+
+  registry.npmmirror.com/regenerator-runtime/0.14.1:
+    resolution: {integrity: sha512-dYnhHh0nJoMfnkZs6GmmhFknAGRrLznOu5nc9ML+EJxGvrx6H7teuevqVqCuPcPK//3eDrrjQhehXVx9cnkGdw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/regenerator-runtime/-/regenerator-runtime-0.14.1.tgz}
+    name: regenerator-runtime
+    version: 0.14.1
+    dev: false
 
   registry.npmmirror.com/sass/1.69.7:
     resolution: {integrity: sha512-rzj2soDeZ8wtE2egyLXgOOHQvaC2iosZrkF6v3EUG+tBwEvhqUCzm0VP3k9gHF9LXbSrRhT5SksoI56Iw8NPnQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/sass/-/sass-1.69.7.tgz}
