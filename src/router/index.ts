@@ -9,13 +9,14 @@ const LazyLoadList = () => import('../components/LazyLoadList/index.vue')
 const VirtualScroll  = () => import('../components/VirtualScroll/index.vue')
 const PCHorizonalScroll  = () => import('../components/PCHorizonalScroll/index.vue')
 const H5DownUpRefresh = () => import('../components/H5DownUpRefresh/index.vue')
+const CountDown = () => import('../components/CountDown/index.vue')
 
 // animation
-const PixiSpineAnime = () => import('../components/PixiSpineAnime.vue')
-const SpinePlayerAnime = () => import('../components/SpinePlayerAnime.vue')
-const SVGAAnime = ()=>import('../components/SVGAAnime.vue')
-const LottieAnime  = () => import('../components/LottieDemo.vue')
-const MatchLottery = () => import('../components/MatchLottery.vue')
+const PixiSpineAnime = () => import('../components/Animation/PixiSpineAnime.vue')
+const SpinePlayerAnime = () => import('../components/Animation/SpinePlayerAnime.vue')
+const SVGAAnime = ()=>import('../components/Animation/SVGAAnime.vue')
+const LottieAnime  = () => import('../components/Animation/LottieDemo.vue')
+const MatchLottery = () => import('../components/Animation/MatchLottery.vue')
 const BiliLottery = () => import('../components/9Lottery//index.vue')
 
 
@@ -29,6 +30,7 @@ const routes = [
   {path: '/virtual-list', component: VirtualScroll},
   {path: '/pc-h-scroll', component: PCHorizonalScroll},
   {path: '/h5-refresh', component: H5DownUpRefresh},
+  {path: '/countdown', component: CountDown},
   // animation
   {path: '/pixi-spine-demo', component: PixiSpineAnime},
   {path: '/spine-player-demo', component: SpinePlayerAnime},

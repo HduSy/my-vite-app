@@ -1,23 +1,28 @@
 <script setup>
+import { onPageResume, timestampFormat, toast } from 'oh-my-funcs';
 import { onMounted, ref } from 'vue';
 import { fire, receive } from '../utils';
-
 const count = ref(0)
 
 const addNum = () => {
   fire('t')
 }
-document.addEventListener('visibilitychange', (event) => {
-  if (document.visibilityState === "visible") {
-    console.log('前台')
-  } else {
-    console.log('后台')
-  }
-})
+// document.addEventListener('visibilitychange', (event) => {
+//   if (document.visibilityState === "visible") {
+//     console.log('前台')
+//   } else {
+//     console.log('后台')
+//   }
+// })
 onMounted(() => {
   receive('t', () => {
     console.log(count.value++)
   })
+  console.log(timestampFormat(10001))
+  onPageResume(() => {
+    toast('进入前台', 1500)
+  })
+
 })
 </script>
 
@@ -30,7 +35,8 @@ onMounted(() => {
       <img src="/src/assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <h3>动画示例目录</h3>
+  <div class="stroke">x188 动画示例目录</div>
+  <div class="stroke2">x188 动画示例目录</div>
   <div class="dir">
     <!-- other -->
     <router-link to="/video">Video</router-link>
@@ -38,6 +44,7 @@ onMounted(() => {
     <router-link to="/virtual-list">虚拟列表</router-link>
     <router-link to="/pc-h-scroll">基于MouseEvent拖拽PC横向滚动简单实现</router-link>
     <router-link to="/h5-refresh">基于TouchEvent实现H5下拉刷新简单实现</router-link>
+    <router-link to="/countdown">倒计时组件</router-link>
     <!-- animation -->
     <router-link to="/pixi-spine-demo">Pixi Spine Animation</router-link>
     <router-link to="/spine-player-demo">Spine Player</router-link>
@@ -69,7 +76,7 @@ onMounted(() => {
   <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -88,5 +95,20 @@ onMounted(() => {
 .dir {
   display: flex;
   flex-direction: column;
+}
+.stroke {
+  font-size: 36px;
+  color: #fff1c5;
+  -webkit-text-stroke: 1px #823700;
+}
+.stroke2 {
+  font-size: 36px;
+  color: #fff1c5;
+  text-shadow: #823700 1px 0, #823700 0 1px, #823700 -1px 0, #823700 0 -1px;
+}
+.stroke3 {
+  font-size: 36px;
+  color: #fff1c5;
+  text-shadow: #823700 1px 0, #823700 0 1px, #823700 -1px 0, #823700 0 -1px;
 }
 </style>

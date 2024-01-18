@@ -6,6 +6,7 @@ specifiers:
   gsap: ^3.12.2
   lodash-es: ^4.17.21
   lottie-web: ^5.12.2
+  oh-my-funcs: ^1.0.1
   oh-my-mitt: ^1.0.1
   pixi-spine: ^4.0.4
   pixi.js: ^7.3.2
@@ -23,6 +24,7 @@ dependencies:
   gsap: registry.npmmirror.com/gsap/3.12.4
   lodash-es: registry.npmmirror.com/lodash-es/4.17.21
   lottie-web: registry.npmmirror.com/lottie-web/5.12.2
+  oh-my-funcs: registry.npmmirror.com/oh-my-funcs/1.0.1
   oh-my-mitt: registry.npmmirror.com/oh-my-mitt/1.0.1
   pixi-spine: registry.npmmirror.com/pixi-spine/4.0.4
   pixi.js: registry.npmmirror.com/pixi.js/7.3.3
@@ -1423,6 +1425,141 @@ packages:
       url: registry.npmmirror.com/url/0.11.3
     dev: false
 
+  registry.npmmirror.com/@rollup/rollup-android-arm-eabi/4.9.5:
+    resolution: {integrity: sha512-idWaG8xeSRCfRq9KpRysDHJ/rEHBEXcHuJ82XY0yYFIWnLMjZv9vF/7DOq8djQ2n3Lk6+3qfSH8AqlmHlmi1MA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@rollup/rollup-android-arm-eabi/-/rollup-android-arm-eabi-4.9.5.tgz}
+    name: '@rollup/rollup-android-arm-eabi'
+    version: 4.9.5
+    cpu: [arm]
+    os: [android]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  registry.npmmirror.com/@rollup/rollup-android-arm64/4.9.5:
+    resolution: {integrity: sha512-f14d7uhAMtsCGjAYwZGv6TwuS3IFaM4ZnGMUn3aCBgkcHAYErhV1Ad97WzBvS2o0aaDv4mVz+syiN0ElMyfBPg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@rollup/rollup-android-arm64/-/rollup-android-arm64-4.9.5.tgz}
+    name: '@rollup/rollup-android-arm64'
+    version: 4.9.5
+    cpu: [arm64]
+    os: [android]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  registry.npmmirror.com/@rollup/rollup-darwin-arm64/4.9.5:
+    resolution: {integrity: sha512-ndoXeLx455FffL68OIUrVr89Xu1WLzAG4n65R8roDlCoYiQcGGg6MALvs2Ap9zs7AHg8mpHtMpwC8jBBjZrT/w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@rollup/rollup-darwin-arm64/-/rollup-darwin-arm64-4.9.5.tgz}
+    name: '@rollup/rollup-darwin-arm64'
+    version: 4.9.5
+    cpu: [arm64]
+    os: [darwin]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  registry.npmmirror.com/@rollup/rollup-darwin-x64/4.9.5:
+    resolution: {integrity: sha512-UmElV1OY2m/1KEEqTlIjieKfVwRg0Zwg4PLgNf0s3glAHXBN99KLpw5A5lrSYCa1Kp63czTpVll2MAqbZYIHoA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@rollup/rollup-darwin-x64/-/rollup-darwin-x64-4.9.5.tgz}
+    name: '@rollup/rollup-darwin-x64'
+    version: 4.9.5
+    cpu: [x64]
+    os: [darwin]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  registry.npmmirror.com/@rollup/rollup-linux-arm-gnueabihf/4.9.5:
+    resolution: {integrity: sha512-Q0LcU61v92tQB6ae+udZvOyZ0wfpGojtAKrrpAaIqmJ7+psq4cMIhT/9lfV6UQIpeItnq/2QDROhNLo00lOD1g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@rollup/rollup-linux-arm-gnueabihf/-/rollup-linux-arm-gnueabihf-4.9.5.tgz}
+    name: '@rollup/rollup-linux-arm-gnueabihf'
+    version: 4.9.5
+    cpu: [arm]
+    os: [linux]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  registry.npmmirror.com/@rollup/rollup-linux-arm64-gnu/4.9.5:
+    resolution: {integrity: sha512-dkRscpM+RrR2Ee3eOQmRWFjmV/payHEOrjyq1VZegRUa5OrZJ2MAxBNs05bZuY0YCtpqETDy1Ix4i/hRqX98cA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@rollup/rollup-linux-arm64-gnu/-/rollup-linux-arm64-gnu-4.9.5.tgz}
+    name: '@rollup/rollup-linux-arm64-gnu'
+    version: 4.9.5
+    cpu: [arm64]
+    os: [linux]
+    libc: [glibc]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  registry.npmmirror.com/@rollup/rollup-linux-arm64-musl/4.9.5:
+    resolution: {integrity: sha512-QaKFVOzzST2xzY4MAmiDmURagWLFh+zZtttuEnuNn19AiZ0T3fhPyjPPGwLNdiDT82ZE91hnfJsUiDwF9DClIQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@rollup/rollup-linux-arm64-musl/-/rollup-linux-arm64-musl-4.9.5.tgz}
+    name: '@rollup/rollup-linux-arm64-musl'
+    version: 4.9.5
+    cpu: [arm64]
+    os: [linux]
+    libc: [musl]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  registry.npmmirror.com/@rollup/rollup-linux-riscv64-gnu/4.9.5:
+    resolution: {integrity: sha512-HeGqmRJuyVg6/X6MpE2ur7GbymBPS8Np0S/vQFHDmocfORT+Zt76qu+69NUoxXzGqVP1pzaY6QIi0FJWLC3OPA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@rollup/rollup-linux-riscv64-gnu/-/rollup-linux-riscv64-gnu-4.9.5.tgz}
+    name: '@rollup/rollup-linux-riscv64-gnu'
+    version: 4.9.5
+    cpu: [riscv64]
+    os: [linux]
+    libc: [glibc]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  registry.npmmirror.com/@rollup/rollup-linux-x64-gnu/4.9.5:
+    resolution: {integrity: sha512-Dq1bqBdLaZ1Gb/l2e5/+o3B18+8TI9ANlA1SkejZqDgdU/jK/ThYaMPMJpVMMXy2uRHvGKbkz9vheVGdq3cJfA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@rollup/rollup-linux-x64-gnu/-/rollup-linux-x64-gnu-4.9.5.tgz}
+    name: '@rollup/rollup-linux-x64-gnu'
+    version: 4.9.5
+    cpu: [x64]
+    os: [linux]
+    libc: [glibc]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  registry.npmmirror.com/@rollup/rollup-linux-x64-musl/4.9.5:
+    resolution: {integrity: sha512-ezyFUOwldYpj7AbkwyW9AJ203peub81CaAIVvckdkyH8EvhEIoKzaMFJj0G4qYJ5sw3BpqhFrsCc30t54HV8vg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@rollup/rollup-linux-x64-musl/-/rollup-linux-x64-musl-4.9.5.tgz}
+    name: '@rollup/rollup-linux-x64-musl'
+    version: 4.9.5
+    cpu: [x64]
+    os: [linux]
+    libc: [musl]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  registry.npmmirror.com/@rollup/rollup-win32-arm64-msvc/4.9.5:
+    resolution: {integrity: sha512-aHSsMnUw+0UETB0Hlv7B/ZHOGY5bQdwMKJSzGfDfvyhnpmVxLMGnQPGNE9wgqkLUs3+gbG1Qx02S2LLfJ5GaRQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@rollup/rollup-win32-arm64-msvc/-/rollup-win32-arm64-msvc-4.9.5.tgz}
+    name: '@rollup/rollup-win32-arm64-msvc'
+    version: 4.9.5
+    cpu: [arm64]
+    os: [win32]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  registry.npmmirror.com/@rollup/rollup-win32-ia32-msvc/4.9.5:
+    resolution: {integrity: sha512-AiqiLkb9KSf7Lj/o1U3SEP9Zn+5NuVKgFdRIZkvd4N0+bYrTOovVd0+LmYCPQGbocT4kvFyK+LXCDiXPBF3fyA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@rollup/rollup-win32-ia32-msvc/-/rollup-win32-ia32-msvc-4.9.5.tgz}
+    name: '@rollup/rollup-win32-ia32-msvc'
+    version: 4.9.5
+    cpu: [ia32]
+    os: [win32]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  registry.npmmirror.com/@rollup/rollup-win32-x64-msvc/4.9.5:
+    resolution: {integrity: sha512-1q+mykKE3Vot1kaFJIDoUFv5TuW+QQVaf2FmTT9krg86pQrGStOSJJ0Zil7CFagyxDuouTepzt5Y5TVzyajOdQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.9.5.tgz}
+    name: '@rollup/rollup-win32-x64-msvc'
+    version: 4.9.5
+    cpu: [x64]
+    os: [win32]
+    requiresBuild: true
+    dev: false
+    optional: true
+
   registry.npmmirror.com/@types/css-font-loading-module/0.0.12:
     resolution: {integrity: sha512-x2tZZYkSxXqWvTDgveSynfjq/T2HyiZHXb00j/+gy19yp70PHCizM48XFdjBCWH7eHBD0R5i/pw9yMBP/BH5uA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/css-font-loading-module/-/css-font-loading-module-0.0.12.tgz}
     name: '@types/css-font-loading-module'
@@ -1433,6 +1570,12 @@ packages:
     resolution: {integrity: sha512-qp3m9PPz4gULB9MhjGID7wpo3gJ4bTGXm7ltNDsmOvsPduTeHp8wSW9YckBj3mljeOh4F0m2z/0JKAALRKbmLQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/earcut/-/earcut-2.1.4.tgz}
     name: '@types/earcut'
     version: 2.1.4
+    dev: false
+
+  registry.npmmirror.com/@types/estree/1.0.5:
+    resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/estree/-/estree-1.0.5.tgz}
+    name: '@types/estree'
+    version: 1.0.5
     dev: false
 
   registry.npmmirror.com/@types/offscreencanvas/2019.7.3:
@@ -1898,7 +2041,6 @@ packages:
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
     requiresBuild: true
-    dev: true
     optional: true
 
   registry.npmmirror.com/function-bind/1.1.2:
@@ -2148,6 +2290,16 @@ packages:
     resolution: {integrity: sha512-5qoj1RUiKOMsCCNLV1CBiPYE10sziTsnmNxkAI/rZhiD63CF7IqdFGC/XzjWjpSgLf0LxXX3bDFIh0E18f6UhQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/object-inspect/-/object-inspect-1.13.1.tgz}
     name: object-inspect
     version: 1.13.1
+    dev: false
+
+  registry.npmmirror.com/oh-my-funcs/1.0.1:
+    resolution: {integrity: sha512-ETXWs/kJNMSKGkIrv8TggeTdRLglNgjPG5qulhpVApFIhTx/oAD1eem+wn/bzD9v2hu4NZtisC6UgmoJC/HPjQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/oh-my-funcs/-/oh-my-funcs-1.0.1.tgz}
+    name: oh-my-funcs
+    version: 1.0.1
+    dependencies:
+      rollup: registry.npmmirror.com/rollup/4.9.5
+      smooth-scroll: registry.npmmirror.com/smooth-scroll/16.1.3
+      smoothscroll-polyfill: registry.npmmirror.com/smoothscroll-polyfill/0.4.4
     dev: false
 
   registry.npmmirror.com/oh-my-mitt/1.0.1:
@@ -2811,6 +2963,31 @@ packages:
       fsevents: registry.npmmirror.com/fsevents/2.3.3
     dev: true
 
+  registry.npmmirror.com/rollup/4.9.5:
+    resolution: {integrity: sha512-E4vQW0H/mbNMw2yLSqJyjtkHY9dslf/p0zuT1xehNRqUTBOFMqEjguDvqhXr7N7r/4ttb2jr4T41d3dncmIgbQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/rollup/-/rollup-4.9.5.tgz}
+    name: rollup
+    version: 4.9.5
+    engines: {node: '>=18.0.0', npm: '>=8.0.0'}
+    hasBin: true
+    dependencies:
+      '@types/estree': registry.npmmirror.com/@types/estree/1.0.5
+    optionalDependencies:
+      '@rollup/rollup-android-arm-eabi': registry.npmmirror.com/@rollup/rollup-android-arm-eabi/4.9.5
+      '@rollup/rollup-android-arm64': registry.npmmirror.com/@rollup/rollup-android-arm64/4.9.5
+      '@rollup/rollup-darwin-arm64': registry.npmmirror.com/@rollup/rollup-darwin-arm64/4.9.5
+      '@rollup/rollup-darwin-x64': registry.npmmirror.com/@rollup/rollup-darwin-x64/4.9.5
+      '@rollup/rollup-linux-arm-gnueabihf': registry.npmmirror.com/@rollup/rollup-linux-arm-gnueabihf/4.9.5
+      '@rollup/rollup-linux-arm64-gnu': registry.npmmirror.com/@rollup/rollup-linux-arm64-gnu/4.9.5
+      '@rollup/rollup-linux-arm64-musl': registry.npmmirror.com/@rollup/rollup-linux-arm64-musl/4.9.5
+      '@rollup/rollup-linux-riscv64-gnu': registry.npmmirror.com/@rollup/rollup-linux-riscv64-gnu/4.9.5
+      '@rollup/rollup-linux-x64-gnu': registry.npmmirror.com/@rollup/rollup-linux-x64-gnu/4.9.5
+      '@rollup/rollup-linux-x64-musl': registry.npmmirror.com/@rollup/rollup-linux-x64-musl/4.9.5
+      '@rollup/rollup-win32-arm64-msvc': registry.npmmirror.com/@rollup/rollup-win32-arm64-msvc/4.9.5
+      '@rollup/rollup-win32-ia32-msvc': registry.npmmirror.com/@rollup/rollup-win32-ia32-msvc/4.9.5
+      '@rollup/rollup-win32-x64-msvc': registry.npmmirror.com/@rollup/rollup-win32-x64-msvc/4.9.5
+      fsevents: registry.npmmirror.com/fsevents/2.3.3
+    dev: false
+
   registry.npmmirror.com/run-parallel/1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/run-parallel/-/run-parallel-1.2.0.tgz}
     name: run-parallel
@@ -2867,6 +3044,18 @@ packages:
     version: 5.1.0
     engines: {node: '>=14.16'}
     dev: true
+
+  registry.npmmirror.com/smooth-scroll/16.1.3:
+    resolution: {integrity: sha512-ca9U+neJS/cbdScTBuUTCZvUWNF2EuMCk7oAx3ImdeRK5FPm+xRo9XsVHIkeEVkn7MBRx+ufVEhyveM4ZhaTGA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/smooth-scroll/-/smooth-scroll-16.1.3.tgz}
+    name: smooth-scroll
+    version: 16.1.3
+    dev: false
+
+  registry.npmmirror.com/smoothscroll-polyfill/0.4.4:
+    resolution: {integrity: sha512-TK5ZA9U5RqCwMpfoMq/l1mrH0JAR7y7KRvOBx0n2869aLxch+gT9GhN3yUfjiw+d/DiF1mKo14+hd62JyMmoBg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/smoothscroll-polyfill/-/smoothscroll-polyfill-0.4.4.tgz}
+    name: smoothscroll-polyfill
+    version: 0.4.4
+    dev: false
 
   registry.npmmirror.com/source-map-js/1.0.2:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/source-map-js/-/source-map-js-1.0.2.tgz}

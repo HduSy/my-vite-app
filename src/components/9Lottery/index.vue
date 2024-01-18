@@ -9,7 +9,7 @@ const type = ref('wait') // 轮播状态，'wait'等待下次抽奖状态、'slo
 const speed = ref(100) // 轮播速度
 const initialSpeed = 100 // 初始速度
 const awardIndex = ref(-1) // 中奖ID
-const lastTime = ref(null) // timer
+const lastTime = ref(0) // timer
 const showDialog = ref(false)
 let giftInfo = reactive({
     name: '别吃了🙄',
