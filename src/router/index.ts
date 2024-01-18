@@ -9,7 +9,7 @@ const LazyLoadList = () => import('../components/LazyLoadList/index.vue')
 const VirtualScroll  = () => import('../components/VirtualScroll/index.vue')
 const PCHorizonalScroll  = () => import('../components/PCHorizonalScroll/index.vue')
 const H5DownUpRefresh = () => import('../components/H5DownUpRefresh/index.vue')
-const CountDown = () => import('../components/CountDown/index.vue')
+const CountDown = () => import('../components/CountDown/index2.vue')
 
 // animation
 const PixiSpineAnime = () => import('../components/Animation/PixiSpineAnime.vue')

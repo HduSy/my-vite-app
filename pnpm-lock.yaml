@@ -8,6 +8,7 @@ specifiers:
   lottie-web: ^5.12.2
   oh-my-funcs: ^1.0.1
   oh-my-mitt: ^1.0.1
+  oh-my-vue3hooks: ^1.0.0
   pixi-spine: ^4.0.4
   pixi.js: ^7.3.2
   postcss: ^8.4.30
@@ -26,6 +27,7 @@ dependencies:
   lottie-web: registry.npmmirror.com/lottie-web/5.12.2
   oh-my-funcs: registry.npmmirror.com/oh-my-funcs/1.0.1
   oh-my-mitt: registry.npmmirror.com/oh-my-mitt/1.0.1
+  oh-my-vue3hooks: link:node_modules/oh-my-vue3hooks
   pixi-spine: registry.npmmirror.com/pixi-spine/4.0.4
   pixi.js: registry.npmmirror.com/pixi.js/7.3.3
   svgaplayerweb: registry.npmmirror.com/svgaplayerweb/2.3.2

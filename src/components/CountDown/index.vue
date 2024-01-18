@@ -36,6 +36,7 @@ const countDown = (duration: number) => {
   min.value = m ?? 0
   ss.value = s ?? 0
   ms.value = mms ?? 0
+
   // 定时器只能保证，何时将回调推入事件循环，而非何时执行
   timer.value = setTimeout(() => {
     const now = Date.now()

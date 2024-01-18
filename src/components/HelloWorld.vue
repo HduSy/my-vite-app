@@ -14,6 +14,7 @@ const addNum = () => {
 //     console.log('后台')
 //   }
 // })
+
 onMounted(() => {
   receive('t', () => {
     console.log(count.value++)

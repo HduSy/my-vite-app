@@ -16,6 +16,8 @@
     "lottie-web": "^5.12.2",
     "oh-my-funcs": "^1.0.1",
     "oh-my-mitt": "^1.0.1",
+    "oh-my-vue3hooks": "^1.0.0",
+    "oh-my-vueuse": "^1.0.0",
     "pixi-spine": "^4.0.4",
     "pixi.js": "^7.3.2",
     "svgaplayerweb": "^2.3.2",
