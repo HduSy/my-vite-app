@@ -1,18 +1,29 @@
 <script setup lang="ts">
-import useCountDown from '../../hooks/useCountDown';
-// import { useCountDown } from 'oh-my-vueuse';
+// import useCountDown from '../../hooks/useCountDown';
+import { useCountDown, useDevicePixelRatio } from 'oh-my-vueuse';
 import { onMounted } from 'vue';
 
 const [time, setTime] = useCountDown(5 * 1000)
+const [time2,  setTime2] = useCountDown(6 * 1000)
+const  [ pixelRatio ] = useDevicePixelRatio()
+
+console.log('pixelRatio', pixelRatio.value)
 
 const show = () => {
-  console.log(time.value)
+  console.log(time.value, time2.value)
   const idx = requestAnimationFrame(show)
   if(time.value <= 0) cancelAnimationFrame(idx)
 }
 onMounted(() => {
   show()
 })
+/**
+ * 唯独hook里拿不到
+ */
+// const x = computed(() => time.value)
+// watch(time, (newv) => {
+//   console.log(newv, 'watch')
+// })
 </script>
 
 <template>

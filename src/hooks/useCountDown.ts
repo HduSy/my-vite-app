@@ -1,6 +1,6 @@
-import { onMounted, onUnmounted, ref } from 'vue'
+import { onMounted, onUnmounted, ref, Ref } from 'vue'
 
-export default function useCountDown(lastTime: number) {
+export default function useCountDown(lastTime: number): [time: Ref<number>, setTime: (time: number) => void] {
   const time = ref(lastTime) // 剩余时间
   // 重设时间计时 ⌛️
   const setTime = (t: number) => {
@@ -9,7 +9,8 @@ export default function useCountDown(lastTime: number) {
     time.value = t
     calcDown()
   }
-  
+  console.log('v6')
+
   const timer = ref(0) // setTimeout 计时器
   const startTime = ref(Date.now())
   const count = ref(0) // 递归次数
