@@ -1,37 +1,35 @@
 import { onMounted, onUnmounted, ref, Ref } from 'vue'
 
 export default function useCountDown(lastTime: number): [time: Ref<number>, setTime: (time: number) => void] {
-  const time = ref(lastTime) // 剩余时间
+  const time = ref(lastTime) // 倒计时间
   // 重设时间计时 ⌛️
   const setTime = (t: number) => {
-    timer.value && clearTimeout(timer.value)
+    clearTimeout(timer.value)
     startTime.value = Date.now()
     time.value = t
     calcDown()
   }
-  console.log('v6')
 
   const timer = ref(0) // setTimeout 计时器
-  const startTime = ref(Date.now())
-  const count = ref(0) // 递归次数
+  const startTime = ref(Date.now()) // 开始时间
   const interval = ref(1000) // 时间间隔
 
   const calcDown = () => {
-    time.value -= interval.value
-    // 置为 0
     if(time.value < 0) {
       time.value = 0
       clearTimeout(timer.value)
       return
     }
-    let offset = Date.now() - (startTime.value + count.value * interval.value) // 偏差
-    if(offset < 0) offset = 0
-    const nextDelay = interval.value - offset // 修正后间隔
-    count.value = count.value + 1
-    console.log("误差：" + offset + "ms，下一次执行：" + nextDelay + "ms后，离活动开始还有：" + time.value + "ms");
-    timer.value = setTimeout(calcDown, nextDelay)
+    timer.value = setTimeout(() => {
+      const now = Date.now()
+      const past = now - startTime.value
+      startTime.value = now
+      const last = Math.round((time.value - past) / 1000) * 1000
+      console.log('last time', last)
+      time.value = last
+      calcDown()
+    }, interval.value)
   }
-  
   onMounted(() => {
     calcDown()
   })
