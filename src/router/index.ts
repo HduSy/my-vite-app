@@ -1,7 +1,7 @@
 
 import { createRouter, createWebHashHistory } from 'vue-router'
 // index
-const HelloWorld = () => import('../views/HelloWorld.vue')
+const Hello = () => import('../views/Hello.vue')
 // other
 const Video  = () => import('../views/VideoItem.vue')
 const CSSModule = () => import('../views/CSSModule.vue')
@@ -22,7 +22,7 @@ const BiliLottery = () => import('../views/9Lottery//index.vue')
 
 const routes = [
   // index
-  {path: '/', component: HelloWorld},
+  {path: '/', component: Hello},
   // other
   {path:'/video', component: Video},
   {path: '/css-module', component: CSSModule},
@@ -38,7 +38,6 @@ const routes = [
   {path: '/lottie-demo', component: LottieAnime},
   {path: '/match-lottery', component: MatchLottery},
   {path: '/9-lottery', component: BiliLottery},
-
 ]
 
 const router = createRouter({
