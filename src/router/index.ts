@@ -1,23 +1,23 @@
 
 import { createRouter, createWebHashHistory } from 'vue-router'
 // index
-const HelloWorld = () => import('../components/HelloWorld.vue')
+const HelloWorld = () => import('../views/HelloWorld.vue')
 // other
-const Video  = () => import('../components/VideoItem.vue')
-const CSSModule = () => import('../components/CSSModule.vue')
-const LazyLoadList = () => import('../components/LazyLoadList/index.vue')
-const VirtualScroll  = () => import('../components/VirtualScroll/index.vue')
-const PCHorizonalScroll  = () => import('../components/PCHorizonalScroll/index.vue')
-const H5DownUpRefresh = () => import('../components/H5DownUpRefresh/index.vue')
-const CountDown = () => import('../components/CountDown/index3.vue')
+const Video  = () => import('../views/VideoItem.vue')
+const CSSModule = () => import('../views/CSSModule.vue')
+const LazyLoadList = () => import('../views/LazyLoadList/index.vue')
+const VirtualScroll  = () => import('../views/VirtualScroll/index.vue')
+const PCHorizonalScroll  = () => import('../views/PCHorizonalScroll/index.vue')
+const H5DownUpRefresh = () => import('../views/H5DownUpRefresh/index.vue')
+const CountDown = () => import('../views/CountDown/index3.vue')
 
 // animation
-const PixiSpineAnime = () => import('../components/Animation/PixiSpineAnime.vue')
-const SpinePlayerAnime = () => import('../components/Animation/SpinePlayerAnime.vue')
-const SVGAAnime = ()=>import('../components/Animation/SVGAAnime.vue')
-const LottieAnime  = () => import('../components/Animation/LottieDemo.vue')
-const MatchLottery = () => import('../components/Animation/MatchLottery.vue')
-const BiliLottery = () => import('../components/9Lottery//index.vue')
+const PixiSpineAnime = () => import('../views/Animation/PixiSpineAnime.vue')
+const SpinePlayerAnime = () => import('../views/Animation/SpinePlayerAnime.vue')
+const SVGAAnime = ()=>import('../views/Animation/SVGAAnime.vue')
+const LottieAnime  = () => import('../views/Animation/LottieDemo.vue')
+const MatchLottery = () => import('../views/Animation/MatchLottery.vue')
+const BiliLottery = () => import('../views/9Lottery//index.vue')
 
 
 const routes = [

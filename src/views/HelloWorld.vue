@@ -113,3 +113,9 @@ onMounted(() => {
   text-shadow: #823700 1px 0, #823700 0 1px, #823700 -1px 0, #823700 0 -1px;
 }
 </style>
+
+<style module>
+.blue-card {
+  background-color: blue;
+}
+</style>
