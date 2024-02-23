@@ -5,6 +5,8 @@ import { onMounted, ref, toRef } from 'vue';
 import { useNaubStore } from '../stores/index';
 import { receive } from '../utils';
 const count = ref(0)
+const obj = ref({name: 't'})
+const arr = ref([1])
 
 const naubStore = useNaubStore()
 // const { message } = naubStore
@@ -30,6 +32,12 @@ onMounted(() => {
 
   setTimeout(() => {
     naubStore.message = '直接修改'
+    obj.value.name = 'tt'
+    // Vue3改进了Vue2对对象响应式监听的限制
+    obj.value.school = 'hdu' // 添加新属性
+    // Vue3改进了Vue2对数组响应式监听的限制
+    // arr.value[1] = 2 // 通过index修改数组项
+    arr.value.length = 0 // 通过length修改数组长度
   }, 2000)
 
 })
@@ -51,6 +59,8 @@ onMounted(() => {
   <div>{{ emojiMessage }}</div>
   <div>{{ message }}</div>
   <div>{{ naubStore.message }}</div>
+  <div>{{ `${obj.name}-${obj.school || 'unknown'}` }}</div>
+  <div>{{ arr.toString() }}</div>
 </template>
 
 <style lang="scss" scoped>
